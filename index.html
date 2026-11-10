@@ -292,7 +292,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
         <p>Tell Shelly a little about your goals, any injuries or health concerns, and how often you'd like to train. She'll get back to you to set up a first session.</p>
         <span class="mark fig" aria-hidden="true"></span>
       </div>
-      <form id="contact-form" novalidate>
+      <form id="contact-form" method="post" novalidate>
         <div class="row2">
           <label for="f-name">Name *<input id="f-name" name="name" required autocomplete="name"></label>
           <label for="f-email">Email *<input id="f-email" name="email" type="email" required autocomplete="email"></label>
@@ -348,6 +348,5 @@ document.getElementById('contact-form').addEventListener('submit',function(e){
   .then(function(){f.reset();s.className='note sent';s.textContent='Thanks! Your message is on its way to Shelly.';})
   .catch(function(){s.className='note';s.textContent='Sorry, that didn’t go through. Please try again, or reach Shelly on Facebook or Instagram.';})
   .finally(function(){btn.disabled=false;});
-});
 });
 </script>
