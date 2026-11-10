@@ -332,19 +332,22 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
 // Duplicate the photo strip so it loops seamlessly.
 (function(){var t=document.querySelector('.track');if(!t||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   Array.prototype.slice.call(t.children).forEach(function(n){var c=n.cloneNode();c.alt='';c.setAttribute('aria-hidden','true');t.appendChild(c)});})();
-// Contact form: delivered to Shelly's inbox through FormSubmit.
+// Contact form: delivered by Web3Forms (recipient is set in the Web3Forms dashboard).
 document.getElementById('contact-form').addEventListener('submit',function(e){
   e.preventDefault();
-  var f=e.target,el=f.elements,s=document.getElementById('form-status'),b=document.getElementById('f-send');
+  var f=e.target,el=f.elements,s=document.getElementById('form-status'),btn=document.getElementById('f-send');
   if(el._honey.value)return;
   if(!el.name.value.trim()||!el.email.value||!el.email.checkValidity()){s.className='note';s.textContent='Please add your name and a valid email address.';return}
-  b.disabled=true;s.className='note';s.textContent='Sending…';
-  fetch('https://formsubmit.co/ajax/shelly@bodiroc.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
-    body:JSON.stringify({name:el.name.value.trim(),email:el.email.value.trim(),subject:el.subject.value.trim(),message:el.message.value.trim(),
-      _subject:'Bodi Roc website: '+(el.subject.value.trim()||'new message from '+el.name.value.trim()),_template:'table',_replyto:el.email.value.trim()})})
-  .then(function(r){return r.json().catch(function(){return {}}).then(function(d){if(!r.ok||d.success==='false'||d.success===false)throw new Error(d.message||'failed');})})
+  btn.disabled=true;s.className='note';s.textContent='Sending…';
+  var name=el.name.value.trim(),subj=el.subject.value.trim();
+  fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({access_key:'23d7400a-5062-4d33-9db7-568cc082ca96',from_name:'Bodi Roc website',
+      subject:'Bodi Roc website: '+(subj||'new message from '+name),name:name,email:el.email.value.trim(),
+      'Subject line':subj,message:el.message.value.trim()})})
+  .then(function(r){return r.json().catch(function(){return {}}).then(function(d){if(!r.ok||!d.success)throw new Error(d.message||'failed');})})
   .then(function(){f.reset();s.className='note sent';s.textContent='Thanks! Your message is on its way to Shelly.';})
   .catch(function(){s.className='note';s.textContent='Sorry, that didn’t go through. Please try again, or reach Shelly on Facebook or Instagram.';})
-  .finally(function(){b.disabled=false;});
+  .finally(function(){btn.disabled=false;});
+});
 });
 </script>
