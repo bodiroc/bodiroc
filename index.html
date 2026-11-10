@@ -299,7 +299,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
         </div>
         <label for="f-subject">Subject<input id="f-subject" name="subject"></label>
         <label for="f-message">Message<textarea id="f-message" name="message"></textarea></label>
-        <div><button class="btn solid" type="submit">Send message</button></div>
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+        <div><button class="btn solid" type="submit" id="f-send">Send message</button></div>
         <p class="note" id="form-status" role="status"></p>
       </form>
     </div>
@@ -331,11 +332,19 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
 // Duplicate the photo strip so it loops seamlessly.
 (function(){var t=document.querySelector('.track');if(!t||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   Array.prototype.slice.call(t.children).forEach(function(n){var c=n.cloneNode();c.alt='';c.setAttribute('aria-hidden','true');t.appendChild(c)});})();
-// Contact form: preview only until a delivery address is set up.
+// Contact form: delivered to Shelly's inbox through FormSubmit.
 document.getElementById('contact-form').addEventListener('submit',function(e){
   e.preventDefault();
-  var f=e.target,s=document.getElementById('form-status');
-  if(!f.name.value.trim()||!f.email.checkValidity()||!f.email.value){s.className='note';s.textContent='Please add your name and a valid email address.';return}
-  s.className='note sent';s.textContent='Preview only: this form isn’t connected to an inbox yet.';
+  var f=e.target,el=f.elements,s=document.getElementById('form-status'),b=document.getElementById('f-send');
+  if(el._honey.value)return;
+  if(!el.name.value.trim()||!el.email.value||!el.email.checkValidity()){s.className='note';s.textContent='Please add your name and a valid email address.';return}
+  b.disabled=true;s.className='note';s.textContent='Sending…';
+  fetch('https://formsubmit.co/ajax/shelly@bodiroc.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({name:el.name.value.trim(),email:el.email.value.trim(),subject:el.subject.value.trim(),message:el.message.value.trim(),
+      _subject:'Bodi Roc website: '+(el.subject.value.trim()||'new message from '+el.name.value.trim()),_template:'table',_replyto:el.email.value.trim()})})
+  .then(function(r){return r.json().catch(function(){return {}}).then(function(d){if(!r.ok||d.success==='false'||d.success===false)throw new Error(d.message||'failed');})})
+  .then(function(){f.reset();s.className='note sent';s.textContent='Thanks! Your message is on its way to Shelly.';})
+  .catch(function(){s.className='note';s.textContent='Sorry, that didn’t go through. Please try again, or reach Shelly on Facebook or Instagram.';})
+  .finally(function(){b.disabled=false;});
 });
 </script>
