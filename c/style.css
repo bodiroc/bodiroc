@@ -202,3 +202,7 @@ footer{background:var(--plum-2);border-top:0;color:#e2c3cb}
 footer .mark{background:#f3d9df}
 .foot{color:#d9b7c0}
 .foot nav a{color:#f6e3e8}.foot nav a:hover{color:var(--gold)}
+
+/* Credentials as typeset text (replaces third-party logos) */
+.cred-line{font:500 .78rem/1.5 var(--head);letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.cred-line span{margin:0 .5em}
