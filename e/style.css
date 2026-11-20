@@ -45,6 +45,20 @@ section{padding-block:clamp(64px,9vw,120px)}
   .top nav a{letter-spacing:.14em;font-size:.74rem}
 }
 
+
+/* Header lockup: a large logo that breaks through the header's gold line at the figure's knees.
+   The line sits at 73.5% of the logo height; a small patch of page color behind the knees leaves a slight gap on each side. */
+@media (min-width:641px){
+  .top{border-bottom:0}
+  .top::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(201,162,91,.55);z-index:0}
+  .top .wrap{--lh:clamp(128px,12vw,156px);height:calc(16px + var(--lh)*.735);padding-block:0;align-items:flex-start}
+  .top .logo{--h:var(--lh);margin-top:16px;z-index:2}
+  .top .logo::before{content:"";position:absolute;top:calc(var(--h)*.735 - 4px);left:calc(var(--h)*.172);width:calc(var(--h)*.148);height:9px;background:var(--night);z-index:0}
+  .top .logo .mark{z-index:1}
+  .top nav{align-self:center}
+  main{padding-top:calc(clamp(128px,12vw,156px)*.265)}
+}
+
 /* Buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;font:500 .82rem/1 var(--text);letter-spacing:.2em;text-transform:uppercase;padding:17px 30px;text-decoration:none;border:1px solid var(--gold);cursor:pointer;transition:background .25s,color .25s}
 .btn.gold{background:var(--gold);color:var(--night)}
