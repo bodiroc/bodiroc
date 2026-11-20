@@ -1,2 +1,10 @@
-# Old Wix links (/about, /testimonials, /contact) get set up here at launch,
-# once the family has picked Version A or B.
+# Old Wix addresses
+/home          /               301
+/about-1       /about          301
+/contact-1     /contact        301
+# Preview addresses used during the redesign
+/a/*           /               301
+/b/*           /               301
+/c/*           /               301
+/d/*           /               301
+/e/*           /:splat         301

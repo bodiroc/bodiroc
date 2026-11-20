@@ -3,104 +3,121 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Bodi Roc: Choose a Design</title>
-<meta name="robots" content="noindex">
+<title>Bodi Roc · Shelly Shubert Personal Fitness Training</title>
+<meta name="description" content="Bodi Roc, a Total Fitness Concept since 1981. Shelly Shubert, ACSM Certified Exercise Physiologist, is one of Hollywood's most professionally experienced personal fitness trainers. Calabasas, CA.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap">
-<style>
-:root{--paper:#f6f2f3;--card:#ffffff;--ink:#2b2226;--muted:#6e6266;--line:#e6dcdf;--brand:#6e0e28;--brand-ink:#fff;
-  --font:"Jost","Century Gothic","Avenir Next",Arial,sans-serif}
-@media (prefers-color-scheme:dark){:root{--paper:#141012;--card:#1f181b;--ink:#f1e9ec;--muted:#b7a8ad;--line:#342a2e;--brand:#d4587a;--brand-ink:#170a0f;color-scheme:dark}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--font)}
-.wrap{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));padding-block:clamp(32px,5vw,56px) 48px}
-.mark{display:block;background:var(--brand);-webkit-mask:var(--src) center/contain no-repeat;mask:var(--src) center/contain no-repeat}
-.logo{--h:110px;position:relative;width:calc(var(--h)*2.02);height:var(--h);margin:0 auto}
-.logo .fig{--src:url(/img/figure.png);position:absolute;left:0;top:0;width:calc(var(--h)*.723);height:var(--h)}
-.logo .word{--src:url(/img/wordmark.png);position:absolute;left:calc(var(--h)*.44);top:calc(var(--h)*.28);width:calc(var(--h)*1.57);height:calc(var(--h)*.407)}
-header{text-align:center}
-h1{font-weight:500;font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15;margin:26px 0 10px;text-wrap:balance}
-header p{margin:0 auto;max-width:56ch;color:var(--muted);font-size:1.08rem}
-.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,3vw,32px);margin-top:clamp(28px,4vw,44px)}
-@media (max-width:640px){.choices{grid-template-columns:minmax(0,1fr)}}
-.choice{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s}
-.choice:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(60,10,25,.14)}
-.choice:focus-visible{outline:3px solid var(--brand);outline-offset:3px}
-@media (prefers-reduced-motion:reduce){.choice{transition:none}.choice:hover{transform:none}}
-/* Live, scaled-down view of each version's home page */
-.shot{position:relative;aspect-ratio:16/11;overflow:hidden;background:#fff;border-bottom:1px solid var(--line)}
-.shot iframe{position:absolute;top:0;left:0;width:1280px;height:880px;border:0;transform-origin:0 0;pointer-events:none}
-.info{padding:22px 24px 24px;display:grid;gap:8px;flex:1}
-.label{font:600 .8rem/1 var(--font);letter-spacing:.18em;text-transform:uppercase;color:var(--brand)}
-.info h2{margin:0;font-weight:500;font-size:1.5rem;line-height:1.2}
-.info p{margin:0;color:var(--muted)}
-.go{margin-top:10px;justify-self:start;background:var(--brand);color:var(--brand-ink);font-weight:500;padding:12px 22px;border-radius:999px}
-.tip{margin-top:30px;text-align:center;color:var(--muted);font-size:.95rem}
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;1,500&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@300;400;500&display=swap">
+<link rel="canonical" href="https://www.bodiroc.com/">
+<link rel="stylesheet" href="/style.css">
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <div class="logo" role="img" aria-label="Bodi Roc"><span class="mark fig"></span><span class="mark word"></span></div>
-    <h1>Which design do you like better?</h1>
-    <p>Here are five designs for Shelly's new website, with the same words and photos. Open each one and look around, on your phone too, then let Tom know which you prefer.</p>
-  </header>
-
-  <div class="choices">
-    <a class="choice" href="/e/">
-      <div class="shot"><iframe src="/e/" title="Version E preview" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe></div>
-      <div class="info">
-        <span class="label">Version E · Newest</span>
-        <h2>Hollywood magazine in burgundy</h2>
-        <p>The same magazine-style pages as Version D, with deep burgundy in place of the black.</p>
-        <span class="go">View Version E</span>
-      </div>
-    </a>
-    <a class="choice" href="/d/">
-      <div class="shot"><iframe src="/d/" title="Version D preview" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe></div>
-      <div class="info">
-        <span class="label">Version D</span>
-        <h2>Hollywood magazine</h2>
-        <p>Separate pages styled like a magazine profile: deep wine and black with ivory and gold, elegant type, large photos and a 1981-and-today feature.</p>
-        <span class="go">View Version D</span>
-      </div>
-    </a>
-    <a class="choice" href="/a/">
-      <div class="shot"><iframe src="/a/" title="Version A preview" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe></div>
-      <div class="info">
-        <span class="label">Version A</span>
-        <h2>One long page</h2>
-        <p>Everything on a single scrolling page, with a bold, sporty look.</p>
-        <span class="go">View Version A</span>
-      </div>
-    </a>
-    <a class="choice" href="/b/">
-      <div class="shot"><iframe src="/b/" title="Version B preview" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe></div>
-      <div class="info">
-        <span class="label">Version B</span>
-        <h2>Classic pages</h2>
-        <p>Separate Home, About, Testimonials and Contact pages, like the current site, with a cleaner, lighter look.</p>
-        <span class="go">View Version B</span>
-      </div>
-    </a>
-    <a class="choice" href="/c/">
-      <div class="shot"><iframe src="/c/" title="Version C preview" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe></div>
-      <div class="info">
-        <span class="label">Version C</span>
-        <h2>Classic pages in wine</h2>
-        <p>The same separate pages as Version B, dressed in Bodi Roc's wine red with rose, blush and gold.</p>
-        <span class="go">View Version C</span>
-      </div>
-    </a>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Bodi Roc home"><span class="mark fig"></span><span class="mark word"></span></a>
+    <nav aria-label="Main"><ul><li><a href="/" aria-current="page">Home</a></li><li><a href="/about">About</a></li><li><a href="/testimonials">Testimonials</a></li><li><a href="/contact">Contact</a></li></ul></nav>
   </div>
-  <p class="tip">Each version has a “Compare designs” button in the corner that brings you back here.</p>
-</div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Personal fitness training · Calabasas, CA</p>
+        <h1>A Total Fitness Concept <em>since 1981</em></h1>
+        <p class="lede">Shelly Shubert is one of Hollywood's most professionally experienced personal fitness trainers, and a Certified Exercise Physiologist who teaches you how your body works, not just what to do.</p>
+        <div class="actions"><a class="btn gold" href="/contact">Begin training</a><a class="textlink" href="/about">Meet Shelly</a></div>
+      </div>
+      <figure class="portrait" id="hero-slides"><img class="on" src="/img/band-overhead.jpg" alt="Shelly Shubert training with a resistance band in her garden" width="1050" height="1400"><img src="/img/band-garden.jpg" alt="Shelly Shubert doing a resistance band rotation outdoors" width="1050" height="1400" loading="lazy"><img src="/img/medball-squat.jpg" alt="Shelly Shubert in a squat holding a medicine ball" width="1049" height="1400" loading="lazy"><img src="/img/chest-fly.jpg" alt="Shelly Shubert on a chest-fly machine" width="900" height="1200" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <div class="creds">
+    <ul class="wrap" aria-label="Credentials">
+      <li><b>40+</b><span>years of personal fitness training</span></li>
+      <li><b>ACSM</b><span>Certified Exercise Physiologist</span></li>
+      <li><b>UCLA</b><span>Certificate in Fitness Instruction</span></li>
+      <li><b>B.S.</b><span>Ball State University</span></li>
+    </ul>
+  </div>
+
+  <section class="thennow on-paper">
+    <div class="wrap">
+      <div class="pair">
+        <figure class="old"><img src="/img/shelly-classic.jpg" alt="Shelly Shubert in 1981, kneeling with dumbbells" width="1084" height="1208" loading="lazy"><figcaption>1981</figcaption></figure>
+        <figure><img src="/img/medball-garden.jpg" alt="Shelly Shubert today, training with a medicine ball" width="1050" height="1400" loading="lazy"><figcaption>Today</figcaption></figure>
+      </div>
+      <div>
+        <p class="eyebrow">Her story</p>
+        <h2>Practicing what she teaches since 1981.</h2>
+        <p>When Shelly started, anyone in Hollywood with a great body could call themselves a trainer. She chose education instead: a two-year program at UCLA, then certification by the American College of Sports Medicine.</p>
+        <p>More than four decades later, she still strength trains and does cardio three to six times a week.</p>
+        <a class="textlink" href="/about">Read her story</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="philosophy">
+    <div class="wrap">
+      <blockquote>“If I can teach my clients about the muscles of the body—how and why they work—then they will be capable of using that knowledge to live very full, healthy lives long after we stop working together.”</blockquote>
+      <cite>Shelly Shubert</cite>
+    </div>
+  </section>
+
+  <section class="programs">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="eyebrow">How she trains</p>
+          <h2>A program built for your body.</h2>
+          <p class="lede">Every client starts with a health history, body composition, a review of doctor's notes and diet. From there, Shelly designs a complete program of strength, flexibility, cardio, nutrition and mental training.</p>
+        </div>
+        <ul class="plist">
+          <li>Men and women</li><li>Adolescents</li><li>Strength and flexibility</li><li>Cardiovascular conditioning</li><li>Nutrition</li><li>Prenatal and postnatal</li><li>The aging population</li><li>Injury and back recovery</li>
+        </ul>
+      </div>
+      <div class="strip3">
+        <img src="/img/band-lunge.jpg" alt="Resistance band lunge" width="911" height="1214" loading="lazy">
+        <img src="/img/shoulder-press.jpg" alt="Dumbbell shoulder press" width="947" height="1263" loading="lazy">
+        <img src="/img/band-garden-2.jpg" alt="Resistance band rotation" width="1050" height="1400" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="voice on-paper">
+    <div class="wrap">
+      <p class="eyebrow">In their words</p>
+      <figure style="margin:0">
+        <blockquote>Shelly Shubert is a menace to the world of the unfit. Her boundless enthusiasm is a major barrier to remaining a sedentary lump of useless lard or couch potato. Something should be done about her ability to be so cheerful so early in the day. Her knowledge of anatomy is too extensive; her wide range of exercise experience is too comprehensive; and her general standards are far too high.</blockquote>
+        <figcaption>Oliver Muirhead, Los Angeles actor</figcaption>
+      </figure>
+      <a class="textlink" href="/testimonials">Read all testimonials</a>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap">
+      <p class="eyebrow">Bodi Roc</p>
+      <h2 style="margin-top:18px">Begin with a <em>conversation.</em></h2>
+      <p>Tell Shelly about your goals, your health history and how often you'd like to train. She'll build a program around you.</p>
+      <a class="btn gold" href="/contact">Contact Shelly</a>
+    </div>
+  </section>
+</main>
+
+
+<footer>
+  <div class="wrap foot">
+    <a class="logo" href="/" aria-label="Bodi Roc home"><span class="mark fig"></span><span class="mark word"></span></a>
+    <nav aria-label="Footer"><a href="/">Home</a><a href="/about">About</a><a href="/testimonials">Testimonials</a><a href="/contact">Contact</a></nav>
+    <nav aria-label="Social"><a href="https://www.facebook.com/BodiRocPersonalFitness">Facebook</a><a href="https://instagram.com/bodiroc">Instagram</a></nav>
+    <span>© Bodi Roc Personal Fitness Training · A Total Fitness Concept since 1981</span>
+  </div>
+</footer>
+
 <script>
-// Scale each live preview to fit its card.
-(function(){
-  function fit(){document.querySelectorAll('.shot').forEach(function(s){var f=s.querySelector('iframe');f.style.transform='scale('+(s.clientWidth/1280)+')'})}
-  fit();addEventListener('resize',fit);
-})();
+// Hero: slow crossfade between a few photos; stays still if the visitor prefers reduced motion.
+(function(){var im=document.querySelectorAll('#hero-slides img');if(im.length<2||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+var i=0;setInterval(function(){im[i].classList.remove('on');i=(i+1)%im.length;im[i].classList.add('on')},6000);})();
 </script>
 </body>
 </html>

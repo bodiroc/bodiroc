@@ -1,13 +1,9 @@
 # bodiroc.com
 
-Website for Bodi Roc Personal Fitness Training (Shelly Shubert), a Total Fitness Concept since 1981.
+Website for Bodi Roc Personal Fitness Training (Shelly Shubert), A Total Fitness Concept since 1981.
 
-- Preview layout while the family chooses a design:
-  - `/` cover page linking to both versions
-  - `/a/` Version A, one long page
-  - `/b/` Version B, separate Home / About / Testimonials / Contact pages (`/b/style.css`)
-  - `/c/` Version C, the same pages as B in the wine color scheme (`/c/style.css`)
-  - `/d/` Version D, magazine-style pages in wine-black, ivory and gold (`/d/style.css`)
-  - `/e/` Version E, Version D in burgundy instead of black (`/e/style.css`)
-- Images are shared in `/img/`. Hosted free on Cloudflare Pages; any change saved to `main` republishes automatically.
-- At launch: move the chosen version to the site root, delete the other and the cover page, remove the "PREVIEW-ONLY" Compare-designs button and every `noindex` tag, and set up `_redirects` for the old Wix links.
+- Static site: `index.html`, `about.html`, `testimonials.html`, `contact.html`, shared `style.css`, images in `img/`.
+- Hosted free on Cloudflare Pages (tom@bodiroc.com account). Any change saved to `main` republishes automatically.
+- Contact form posts to Web3Forms; the recipient address is set in the Web3Forms dashboard.
+- `_redirects` maps old Wix and preview addresses to the current pages.
+- Earlier design versions (A–E) are in the git history.

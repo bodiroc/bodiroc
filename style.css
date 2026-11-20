@@ -1,9 +1,9 @@
-/* Bodi Roc, Version D: magazine-profile layout.
+/* Bodi Roc site styles: burgundy stage with ivory type and gold accents.
    Wine-black stage with ivory type and a little gold; long reading happens on ivory "paper" pages.
    Bodoni Moda (a nod to "Bodi") for display, Jost for text. One committed look, no dark/light switch. */
 :root{
-  --night:#170a0f; --night-2:#0f0609; --wine-deep:#3e0a19; --wine:#74112d; --gold:#c9a25b; --gold-soft:#e2c890;
-  --ivory:#f5eee8; --on-dark:#d9c8cc; --on-dark-2:#a58f96; --paper:#f3ebe4; --ink:#2a1218; --ink-2:#6f565d; --rule:#dccbc4;
+  --night:#4e0f22; --night-2:#2f0714; --wine-deep:#3a0918; --wine:#7a1530; --gold:#c9a25b; --gold-soft:#e2c890;
+  --ivory:#f5eee8; --on-dark:#ecd9dd; --on-dark-2:#cdb0b7; --paper:#f3ebe4; --ink:#2a1218; --ink-2:#6f565d; --rule:#dccbc4;
   --display:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
   --text:"Jost","Avenir Next","Century Gothic",Arial,sans-serif;
   --wrap:1180px;
@@ -78,7 +78,10 @@ section{padding-block:clamp(64px,9vw,120px)}
 .hero .actions{display:flex;flex-wrap:wrap;align-items:center;gap:22px 28px;margin-top:38px}
 .portrait{position:relative;margin:0}
 .portrait::before{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--gold);opacity:.55;pointer-events:none}
-.portrait img{position:relative;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%}
+.portrait{aspect-ratio:4/5}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%;opacity:0;transition:opacity 1.6s ease}
+.portrait img.on{opacity:1}
+@media (prefers-reduced-motion:reduce){.portrait img{transition:none}}
 @media (max-width:860px){.hero .wrap{grid-template-columns:minmax(0,1fr)}.portrait{max-width:520px}.portrait::before{inset:12px -12px -12px 12px}}
 
 /* Credential band */
@@ -131,7 +134,7 @@ section{padding-block:clamp(64px,9vw,120px)}
 .voice .textlink{display:inline-block;margin-top:34px}
 
 /* Closing call to action */
-.closing{text-align:center;background:radial-gradient(ellipse at 50% 0%,#2a0e18 0%,var(--night) 70%)}
+.closing{text-align:center;background:radial-gradient(ellipse at 50% 0%,#6b1a31 0%,var(--night) 72%)}
 .closing h2{font-size:clamp(2.2rem,4.6vw,3.8rem)}
 .closing h2 em{color:var(--gold-soft)}
 .closing p{margin:20px auto 0;max-width:50ch;color:var(--on-dark);font-weight:300}
@@ -153,7 +156,7 @@ section{padding-block:clamp(64px,9vw,120px)}
 .prose h2{font-size:clamp(1.7rem,2.8vw,2.2rem);color:var(--wine);margin-top:1em}
 .prose > p:first-of-type:not(.pull)::first-letter{font:400 4.1em/0.82 var(--display);float:left;margin:.06em .1em 0 0;color:var(--wine)}
 .prose .pull{margin:.4em 0;padding:0 0 0 24px;border-left:1px solid var(--gold);font:400 italic 1.4rem/1.45 var(--display);color:var(--ink)}
-.prose .cue{margin:.8em 0;padding:30px 32px;background:var(--night);color:var(--ivory);font:400 italic 1.35rem/1.5 var(--display)}
+.prose .cue{margin:.8em 0;padding:30px 32px;background:var(--wine);color:var(--ivory);font:400 italic 1.35rem/1.5 var(--display)}
 .prose .cue cite{display:block;margin-top:14px;font:500 .74rem/1 var(--text);letter-spacing:.22em;text-transform:uppercase;font-style:normal;color:var(--gold)}
 .prose .areas{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0 24px}
 .prose .areas li{padding:14px 0;border-top:1px solid var(--rule)}
@@ -206,6 +209,23 @@ footer{background:var(--night-2);border-top:1px solid rgba(201,162,91,.25);paddi
 .foot nav a{text-decoration:none;color:var(--on-dark);letter-spacing:.06em}
 .foot nav a:hover{color:var(--gold-soft)}
 
-/* PREVIEW-ONLY: remove at launch */
-.pv{position:fixed;z-index:20;left:max(12px,env(safe-area-inset-left,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));display:flex;gap:10px;align-items:center;background:#f5eee8;color:#170a0f;font:500 .8rem/1 var(--text);padding:10px 14px;border-radius:999px;box-shadow:0 4px 18px rgba(0,0,0,.4);text-decoration:none}
-.pv b{background:#74112d;color:#fff;border-radius:999px;padding:4px 8px;font-weight:500}
+
+/* Contact page: the gold logo, large, in place of a photo */
+.contact .logo.big{--h:clamp(170px,22vw,260px);margin-top:44px}
+
+/* Headlines in the original Bodi Roc style: bold condensed capitals, with gold italic accents.
+   The elegant serif stays for quotes and the credential numerals. */
+:root{--headline:"Barlow Condensed","Arial Narrow",Arial,sans-serif}
+h1,h2{font-family:var(--headline);font-weight:600;text-transform:uppercase;letter-spacing:.02em;line-height:1}
+h1 em,h2 em{font-weight:500;font-style:italic;text-transform:none;color:var(--gold-soft)}
+.hero h1{font-size:clamp(2.7rem,5.3vw,4.7rem)}
+.pagehero h1{font-size:clamp(2.8rem,5.6vw,4.8rem)}
+.contact h1{font-size:clamp(2.6rem,5.2vw,4.4rem)}
+.thennow h2,.programs h2{font-size:clamp(2rem,3.8vw,3.1rem)}
+.closing h2{font-size:clamp(2.3rem,4.6vw,3.8rem)}
+.prose h2{font-size:clamp(1.8rem,3vw,2.4rem);line-height:1}
+.on-paper h2 em,.prose h2 em{color:var(--wine)}
+form h2{font-size:2.1rem}
+
+/* Credential figures in the same gold as "since 1981" */
+.creds b{color:var(--gold-soft);font:500 clamp(2.1rem,3.4vw,2.8rem)/1 var(--display);font-variation-settings:'opsz' 14;letter-spacing:.01em}
