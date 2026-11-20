@@ -13,7 +13,7 @@
 @media (prefers-color-scheme:dark){:root{--paper:#141012;--card:#1f181b;--ink:#f1e9ec;--muted:#b7a8ad;--line:#342a2e;--brand:#d4587a;--brand-ink:#170a0f;color-scheme:dark}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--font)}
-.wrap{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));padding-block:clamp(32px,5vw,56px) 48px}
+.wrap{max-width:1280px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));padding-block:clamp(32px,5vw,56px) 48px}
 .mark{display:block;background:var(--brand);-webkit-mask:var(--src) center/contain no-repeat;mask:var(--src) center/contain no-repeat}
 .logo{--h:110px;position:relative;width:calc(var(--h)*2.02);height:var(--h);margin:0 auto}
 .logo .fig{--src:url(/img/figure.png);position:absolute;left:0;top:0;width:calc(var(--h)*.723);height:var(--h)}
@@ -21,8 +21,9 @@ body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--f
 header{text-align:center}
 h1{font-weight:500;font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15;margin:26px 0 10px;text-wrap:balance}
 header p{margin:0 auto;max-width:56ch;color:var(--muted);font-size:1.08rem}
-.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,3vw,32px);margin-top:clamp(28px,4vw,44px)}
-@media (max-width:760px){.choices{grid-template-columns:minmax(0,1fr)}}
+.choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,3vw,32px);margin-top:clamp(28px,4vw,44px)}
+@media (max-width:980px){.choices{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.choices{grid-template-columns:minmax(0,1fr)}}
 .choice{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s}
 .choice:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(60,10,25,.14)}
 .choice:focus-visible{outline:3px solid var(--brand);outline-offset:3px}
@@ -43,7 +44,7 @@ header p{margin:0 auto;max-width:56ch;color:var(--muted);font-size:1.08rem}
   <header>
     <div class="logo" role="img" aria-label="Bodi Roc"><span class="mark fig"></span><span class="mark word"></span></div>
     <h1>Which design do you like better?</h1>
-    <p>Here are two designs for Shelly's new website, with the same words and photos. Open each one and look around, on your phone too, then let Tom know which you prefer.</p>
+    <p>Here are three designs for Shelly's new website, with the same words and photos. Open each one and look around, on your phone too, then let Tom know which you prefer.</p>
   </header>
 
   <div class="choices">
@@ -63,6 +64,15 @@ header p{margin:0 auto;max-width:56ch;color:var(--muted);font-size:1.08rem}
         <h2>Classic pages</h2>
         <p>Separate Home, About, Testimonials and Contact pages, like the current site, with a cleaner, lighter look.</p>
         <span class="go">View Version B</span>
+      </div>
+    </a>
+    <a class="choice" href="/c/">
+      <div class="shot"><iframe src="/c/" title="Version C preview" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe></div>
+      <div class="info">
+        <span class="label">Version C</span>
+        <h2>Classic pages in wine</h2>
+        <p>The same separate pages as Version B, dressed in Bodi Roc's wine red with rose, blush and gold.</p>
+        <span class="go">View Version C</span>
       </div>
     </a>
   </div>
