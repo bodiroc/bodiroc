@@ -212,3 +212,6 @@ footer{background:var(--night-2);border-top:1px solid rgba(201,162,91,.25);paddi
 /* PREVIEW-ONLY: remove at launch */
 .pv{position:fixed;z-index:20;left:max(12px,env(safe-area-inset-left,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));display:flex;gap:10px;align-items:center;background:#f5eee8;color:#170a0f;font:500 .8rem/1 var(--text);padding:10px 14px;border-radius:999px;box-shadow:0 4px 18px rgba(0,0,0,.4);text-decoration:none}
 .pv b{background:#4e0f22;color:#fff;border-radius:999px;padding:4px 8px;font-weight:500}
+
+/* Contact page: the gold logo, large, in place of a photo */
+.contact .logo.big{--h:clamp(170px,22vw,260px);margin-top:44px}
