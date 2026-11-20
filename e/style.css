@@ -219,13 +219,13 @@ footer{background:var(--night-2);border-top:1px solid rgba(201,162,91,.25);paddi
 /* Headlines in the original Bodi Roc style: bold condensed capitals, with gold italic accents.
    The elegant serif stays for quotes and the credential numerals. */
 :root{--headline:"Barlow Condensed","Arial Narrow",Arial,sans-serif}
-h1,h2{font-family:var(--headline);font-weight:800;text-transform:uppercase;letter-spacing:.005em;line-height:.95}
-h1 em,h2 em{font-weight:600;font-style:italic;text-transform:none;color:var(--gold-soft)}
-.hero h1{font-size:clamp(3.2rem,7vw,6.2rem)}
-.pagehero h1{font-size:clamp(3.2rem,7vw,5.8rem)}
-.contact h1{font-size:clamp(3rem,6.4vw,5.2rem)}
-.thennow h2,.programs h2{font-size:clamp(2.3rem,4.4vw,3.6rem)}
-.closing h2{font-size:clamp(2.6rem,5.4vw,4.4rem)}
+h1,h2{font-family:var(--headline);font-weight:500;text-transform:uppercase;letter-spacing:.02em;line-height:1}
+h1 em,h2 em{font-weight:500;font-style:italic;text-transform:none;color:var(--gold-soft)}
+.hero h1{font-size:clamp(2.7rem,5.3vw,4.7rem)}
+.pagehero h1{font-size:clamp(2.8rem,5.6vw,4.8rem)}
+.contact h1{font-size:clamp(2.6rem,5.2vw,4.4rem)}
+.thennow h2,.programs h2{font-size:clamp(2rem,3.8vw,3.1rem)}
+.closing h2{font-size:clamp(2.3rem,4.6vw,3.8rem)}
 .prose h2{font-size:clamp(1.8rem,3vw,2.4rem);line-height:1}
 .on-paper h2 em,.prose h2 em{color:var(--wine)}
 form h2{font-size:2.1rem}
