@@ -230,5 +230,5 @@ h1 em,h2 em{font-weight:500;font-style:italic;text-transform:none;color:var(--go
 .on-paper h2 em,.prose h2 em{color:var(--wine)}
 form h2{font-size:2.1rem}
 
-/* Credential figures in the same metallic gold as the logo */
-.creds b{color:var(--gold-soft);background:linear-gradient(165deg,#f0dba6 0%,#d4ae68 50%,#b08643 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+/* Credential figures in the same gold as "since 1981" */
+.creds b{color:var(--gold-soft)}
