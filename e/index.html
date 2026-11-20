@@ -27,7 +27,7 @@
         <p class="lede">Shelly Shubert is one of Hollywood's most professionally experienced personal fitness trainers, and a Certified Exercise Physiologist who teaches you how your body works, not just what to do.</p>
         <div class="actions"><a class="btn gold" href="/e/contact">Begin training</a><a class="textlink" href="/e/about">Meet Shelly</a></div>
       </div>
-      <figure class="portrait"><img src="/img/band-overhead.jpg" alt="Shelly Shubert training with a resistance band in her garden" width="1050" height="1400"></figure>
+      <figure class="portrait" id="hero-slides"><img class="on" src="/img/band-overhead.jpg" alt="Shelly Shubert training with a resistance band in her garden" width="1050" height="1400"><img src="/img/band-garden.jpg" alt="Shelly Shubert doing a resistance band rotation outdoors" width="1050" height="1400" loading="lazy"><img src="/img/medball-squat.jpg" alt="Shelly Shubert in a squat holding a medicine ball" width="1049" height="1400" loading="lazy"><img src="/img/chest-fly.jpg" alt="Shelly Shubert on a chest-fly machine" width="900" height="1200" loading="lazy"></figure>
     </div>
   </section>
 
@@ -115,5 +115,10 @@
   </div>
 </footer>
 
+<script>
+// Hero: slow crossfade between a few photos; stays still if the visitor prefers reduced motion.
+(function(){var im=document.querySelectorAll('#hero-slides img');if(im.length<2||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+var i=0;setInterval(function(){im[i].classList.remove('on');i=(i+1)%im.length;im[i].classList.add('on')},6000);})();
+</script>
 </body>
 </html>
